@@ -1,24 +1,22 @@
 import {useState} from "react";
 import tax from "./tax-rates.js";
 
-function Tax_calculation() {
+function Tax_calculation(props) {
     const [image, setImage] = useState("public/close.svg")
 
-    function deleteTax() {
 
-    }
 
 
     return (
         <div className="tax-calculation">
-                    <div className={"tax-1"}>$20,000</div>
-                    <div className={"tax-2"}>%15</div>
-                    <div className={"tax-3"}>$4,000</div>
-                    <div className={"tax-4"}>$16,000</div>
+                    <div className={"tax-1"}>{props.grossCapitalGains}</div>
+                    <div className={"tax-2"}>{`%${props.taxRate}`}</div>
+                    <div className={"tax-3"}>{props.taxPaid}</div>
+                    <div className={"tax-4"}>{props.NetGains}</div>
                     <img
                         onMouseEnter={() => setImage(prevImg => "public/close_prelight.svg")}
                         onMouseLeave={() => setImage(prevState =>   "public/close.svg" )}
-                        onClick={deleteTax}
+                        onClick={props.deleteTaxDiv}
                         className={"close"} src={image} alt=""
                     />
                 </div>

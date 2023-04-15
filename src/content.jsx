@@ -3,13 +3,23 @@ import tax from "./tax-rates.js";
 import Tax_calculation from "./Tax-Calculation.jsx";
 function Content(props) {
 
-    // const TaxDivs
+    const TaxDivs = props.taxDivs.map((div) => {
+
+        return <Tax_calculation
+                id={div.id}
+                grossCapitalGains={div.grossCapitalGains}
+                taxPaid={div.taxPaid}
+                taxRate={div.taxRate}
+                NetGains={div.NetGains}
+                key={div.id}
+                deleteTaxDiv={() => props.deleteTaxDiv(div.id)}
+        />
+    })
 
     function deleteTax() {
 
     }
-    //make a state to hold array of tax-calculations, we likely need a component of it, to render it with map
-    //for each calculation
+
     return (
         <div className="content">
             <header className="header">
@@ -19,8 +29,7 @@ function Content(props) {
                 <p>Net gain</p>
             </header>
             <main className="main">
-                <Tax_calculation></Tax_calculation>
-                <Tax_calculation></Tax_calculation>
+                {TaxDivs}
             </main>
         </div>
     )

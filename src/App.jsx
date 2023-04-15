@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import tax from "./tax-rates.js";
 import Sidebar from "./Sidebar.jsx";
@@ -9,8 +9,42 @@ function App() {
         capitalGains: "", stateTaxRate: "0", shortOrLongTax: "shortTermTaxRate"
     })
 
-    const [taxDivs, setTaxDivs] = useState(() => {})
+    const [taxDivs, setTaxDivs] = useState(() => JSON.parse(localStorage.getItem("taxDivs")) || [])
 
+    useEffect(() => {
+        localStorage.setItem("taxDivs", JSON.stringify(taxDivs))
+    }, [taxDivs])
+
+    const formatter = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        });
+
+    function deleteTaxDiv(id) {
+
+        setTaxDivs(prevDivs => {
+            return prevDivs.filter(div => div.id !== id)
+        })
+        console.log(localStorage)
+        console.log(taxDivs)
+    }
+
+    function createNewTaxDiv(gross, taxPaid, taxRate) {
+        let Net = gross - taxPaid;
+
+
+        const newTaxDiv = {
+            id: taxDivs.length + 1,
+            grossCapitalGains: formatter.format(gross),
+            taxPaid: formatter.format(taxPaid),
+            taxRate: taxRate,
+            NetGains: formatter.format(Net),
+        }
+        setTaxDivs(prevTax => [ ...prevTax, newTaxDiv])
+        console.log(taxDivs)
+    }
 
      function submitForm(event) {
         event.preventDefault()
@@ -19,21 +53,17 @@ function App() {
         let term = formData.shortOrLongTax;
         let taxPaid;
         let taxRate;
-        let netGains;
-
         if (term === "shortTermTaxRate") {
             taxPaid = tax.getShortTermTaxInfo(gains, stateTax).taxPaid
             taxRate = tax.getShortTermTaxInfo(gains, stateTax).taxRate
-
+            createNewTaxDiv(gains, taxPaid, taxRate)
         } else {
             taxPaid = tax.getLongTermTaxInfo(gains, stateTax).taxPaid
             taxRate = tax.getLongTermTaxInfo(gains, stateTax).taxRate
-
+            createNewTaxDiv(gains, taxPaid, taxRate)
         }
-        console.log(formData, taxPaid, taxRate)
-
+        console.log(formData, taxPaid)
     }
-    //on form submit, have function call tax, then get data and pass in to content to generate tax-calculation holders
 
   return (
     <div id={"app"}>
@@ -45,6 +75,8 @@ function App() {
         <Content
             formData={formData}
             setFormData={setFormData}
+            taxDivs={taxDivs}
+            deleteTaxDiv={deleteTaxDiv}
         ></Content>
     </div>
   )
