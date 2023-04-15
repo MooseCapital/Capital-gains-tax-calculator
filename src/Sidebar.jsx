@@ -1,14 +1,11 @@
 import {useState} from "react";
 
-function Sidebar() {
+function Sidebar(props) {
 
-    const [formData, setFormData] = useState({
-        capitalGains: "", stateTaxRate: "0"
-    })
+
 
     function handleChange(event) {
-        console.log("test")
-        setFormData(prevForm => {
+        props.setFormData(prevForm => {
                 return {
                     ...prevForm,
                     [event.target.name] : event.target.value,
@@ -19,7 +16,7 @@ function Sidebar() {
 
     function submitForm(event) {
         event.preventDefault()
-        console.log(formData)
+        console.log(props.formData)
     }
 
     return (
@@ -28,12 +25,35 @@ function Sidebar() {
 
         </div>
             <form action="" onSubmit={submitForm}>
+            <div className={"holding-length"}>Holding Length</div>
+            <div className={"radio-holder"}>
+                <label id={"tax-radio"} htmlFor="shortTermTaxRate">Short
+                       <input
+                        type="radio"
+                        id="shortTermTaxRate"
+                        name={"shortOrLongTax"}
+                        value={"shortTermTaxRate"}
+                        onChange={handleChange}
+                        checked={props.formData.shortOrLongTax === "shortTermTaxRate"}
+                    />
+                </label>
+                <label id={"tax-radio"} htmlFor="shortTermTaxRate">Long
+                       <input
+                        type="radio"
+                        id="longTermTaxRate"
+                        name={"shortOrLongTax"}
+                        value={"longTermTaxRate"}
+                        onChange={handleChange}
+                        checked={props.formData.shortOrLongTax === "longTermTaxRate"}
+                    />
+                </label>
+            </div>
 
-                <label htmlFor="capitalGains">Capital Gains</label>
-                <input onChange={handleChange} id={"capitalGains"} name={"capitalGains"} value={formData.grossIncome} type="text"/>
-                <label htmlFor="stateTaxRate">State tax rate</label>
-                <input onChange={handleChange} id={"stateTaxRate"} name={"stateTaxRate"} value={formData.stateTaxRate} type="text"/>
-                <button>Calculate</button>
+            <label htmlFor="capitalGains">Capital Gains</label>
+            <input onChange={handleChange} id={"capitalGains"} name={"capitalGains"} value={props.formData.grossIncome} type="text"/>
+            <label htmlFor="stateTaxRate">State tax rate</label>
+            <input onChange={handleChange} id={"stateTaxRate"} name={"stateTaxRate"} value={props.formData.stateTaxRate} type="text"/>
+            <button>Calculate</button>
             </form>
         </div>
     )

@@ -1,12 +1,13 @@
 import {useState} from "react";
-
-function Content() {
+import tax from "./tax-rates.js";
+function Content(props) {
     const [image, setImage] = useState("public/close.svg")
 
     function deleteTax() {
 
     }
-
+    //make a state to hold array of tax-calculations, we likely need a component of it, to render it with map
+    //for each calculation
     return (
         <div className="content">
             <header className="header">

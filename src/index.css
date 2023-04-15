@@ -47,11 +47,24 @@ height: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
+/*background-color: #81A1C1;*/
+padding-top: 100px;
 }
  form label {
     font-size: 20px;
     white-space: nowrap;
-    margin-top: 30px;
+    margin-top: 20px;
+ }
+ #tax-radio {
+ font-size: 14px;
+ display: flex;
+ margin-top: 10px;
+ margin-bottom: 20px;
+ cursor: pointer;
+ }
+ .holding-length {
+ font-size: 20px;
+ margin-bottom: 5px;
  }
 form input[type=text] {
 all: unset;
@@ -77,14 +90,18 @@ form button {
     color: #88c0d0;
     border-radius: 5px;
     transition: transform 100ms ease-in-out;
-    margin-top: 30px;
+    margin-top: 50px;
     cursor: pointer;
 }
 
 ::selection {
     background-color: #88C0D0;
 }
-
+.radio-holder {
+display: flex;
+margin-bottom: 0;
+margin-left: 15px;
+}
 .content {
 display: grid;
 grid-row: 1 / 2;
@@ -137,6 +154,7 @@ grid-template: auto / 1fr 1fr 1fr 1fr auto ;
 .tax-calculation>div {
 /*margin: 0 140px;*/
 padding-left: 200px;
+font-weight: 400;
 }
 .close {
     cursor: pointer;
@@ -169,7 +187,7 @@ margin-left: -40px;
 
 
 input[type=radio] {
-
+     cursor: pointer;
     appearance: none;
     background-color: #4c566a;
     margin: 0 0.5rem;
