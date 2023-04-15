@@ -77,7 +77,7 @@ let tax = (function () {
 
             function getLongTermTaxInfo(grossIncome, stateTaxRate) {
                 let taxPaid = Math.round(single_LongTermGainsTax(grossIncome, stateTaxRate)) === 0 ?
-                null: Math.round(single_ShortTermGainsTax(grossIncome, stateTaxRate))
+                null: Math.round(single_LongTermGainsTax(grossIncome, stateTaxRate))
                 let taxRate = Math.round(isNaN((taxPaid / grossIncome) * 100) ? 0 : (taxPaid / grossIncome) * 100);
 
 

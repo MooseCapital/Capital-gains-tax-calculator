@@ -12,19 +12,17 @@ function Sidebar(props) {
 
                 }
             })
+
     }
 
-    function submitForm(event) {
-        event.preventDefault()
-        console.log(props.formData)
-    }
+
 
     return (
         <div className="sidebar">
         <div className="show-tax-box">
 
         </div>
-            <form action="" onSubmit={submitForm}>
+            <form action="" onSubmit={props.submitForm}>
             <div className={"holding-length"}>Holding Length</div>
             <div className={"radio-holder"}>
                 <label id={"tax-radio"} htmlFor="shortTermTaxRate">Short
