@@ -10,7 +10,7 @@ function Tax_calculation(props) {
     return (
         <div className="tax-calculation">
                     <div className={"tax-1"}>{props.grossCapitalGains}</div>
-                    <div className={"tax-2"}>{`%${props.taxRate}`}</div>
+                    <div className={"tax-2"}>{`${props.taxRate}%`}</div>
                     <div className={"tax-3"}>{props.taxPaid}</div>
                     <div className={"tax-4"}>{props.NetGains}</div>
                     <img

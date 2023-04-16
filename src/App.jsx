@@ -15,6 +15,8 @@ function App() {
         localStorage.setItem("taxDivs", JSON.stringify(taxDivs))
     }, [taxDivs])
 
+
+
     const formatter = new Intl.NumberFormat('en-US', {
           style: 'currency',
           currency: 'USD',
@@ -62,7 +64,6 @@ function App() {
             taxRate = tax.getLongTermTaxInfo(gains, stateTax).taxRate
             createNewTaxDiv(gains, taxPaid, taxRate)
         }
-        console.log(formData, taxPaid)
     }
 
   return (
@@ -71,6 +72,7 @@ function App() {
             formData={formData}
             setFormData={setFormData}
             submitForm={submitForm}
+            formatter={formatter}
         ></Sidebar>
         <Content
             formData={formData}
