@@ -3,7 +3,7 @@
 
 This is my first project fully on my own since learning React.
 
-I am taking Bob Ziroll's React Beginner course.This is my first course on React. I am 10 hours in the 11:55:00 course that is on [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/bMknfKXIFA8) & [![Scrimba](https://img.shields.io/badge/scrimba-2B283A?style=for-the-badge&logo=scrimba&logoColor=white)](https://scrimba.com/learn/learnreact)
+I am taking Bob Ziroll's React Beginner course.This is my first course on React. I am 10 hours in the 11:55:00 course that is on [Youtube](https://youtu.be/bMknfKXIFA8) & [Scrimba](https://scrimba.com/learn/learnreact)
 
 I thought I would create something I'm familiar with like my previous [Charitable-Remainder-Trust-Calculator](https://github.com/MooseCapital/-Charitable-Remainder-Trust-Calculator-) that is built in plain javascript only.
 
@@ -18,7 +18,7 @@ I thought I would create something I'm familiar with like my previous [Charitabl
 
 **Client:** ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB), ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-**Style** The aesthetic [NordTheme](https://www.nordtheme.com/)
+**Style**  [NordTheme](https://www.nordtheme.com/)
 
 
 
