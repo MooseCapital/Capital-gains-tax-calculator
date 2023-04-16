@@ -16,7 +16,7 @@ I thought I would create something I'm familiar with like my previous [Charitabl
 
 ## Tech Stack
 
-**Client:** ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB), ![Vite](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png), 
+**Client:** ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB), ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
 **Style** The aesthetic [NordTheme](https://www.nordtheme.com/)
 
