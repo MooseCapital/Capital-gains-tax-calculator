@@ -207,7 +207,7 @@ margin-left: 160px;
 
 @font-face {
     font-family: "Rubik";
-    src: url("public/Rubik-VariableFont_wght.ttf") format("woff2");
+    src: url("/public/Rubik-VariableFont_wght.ttf") format("woff2");
 }
 
 
