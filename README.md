@@ -3,7 +3,7 @@
 
 This is my first project fully on my own since learning React.
 
-I am taking Bob Ziroll's React Beginner course.This is my first course on React. I am 10 hours in the 11:55:00 course that is on youtube & Scrimba.
+I am taking Bob Ziroll's React Beginner course.This is my first course on React. I am 10 hours in the 11:55:00 course that is on [youtube](https://youtu.be/bMknfKXIFA8) & [Scrimba](https://scrimba.com/learn/learnreact).
 
 I thought I would create something I'm familiar with like my previous [Charitable-Remainder-Trust-Calculator](https://github.com/MooseCapital/-Charitable-Remainder-Trust-Calculator-) that is built in plain javascript only.
 
