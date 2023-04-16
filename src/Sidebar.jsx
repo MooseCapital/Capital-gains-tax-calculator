@@ -26,7 +26,6 @@ function Sidebar(props) {
             }
 
         }, [props.formData])
-        console.log(tax99.tax_paid, tax99.tax_rate, props.formData.capitalGains)
 
     function handleChange(event) {
         props.setFormData(prevForm => {
@@ -50,7 +49,7 @@ function Sidebar(props) {
             <form action="" onSubmit={props.submitForm}>
             <div className={"holding-length"}>Holding Length</div>
             <div className={"radio-holder"}>
-                <label id={"tax-radio"} htmlFor="shortTermTaxRate">Short
+                <label className={"tax-radio"} htmlFor="shortTermTaxRate">Short
                        <input
                         type="radio"
                         id="shortTermTaxRate"
@@ -60,7 +59,7 @@ function Sidebar(props) {
                         checked={props.formData.shortOrLongTax === "shortTermTaxRate"}
                     />
                 </label>
-                <label id={"tax-radio"} htmlFor="shortTermTaxRate">Long
+                <label className={"tax-radio"} htmlFor="shortTermTaxRate">Long
                        <input
                         type="radio"
                         id="longTermTaxRate"

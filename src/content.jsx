@@ -13,6 +13,7 @@ function Content(props) {
                 NetGains={div.NetGains}
                 key={div.id}
                 deleteTaxDiv={() => props.deleteTaxDiv(div.id)}
+                taxTerm={div.taxTerm}
         />
     })
 

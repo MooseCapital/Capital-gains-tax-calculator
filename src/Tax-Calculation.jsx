@@ -9,6 +9,7 @@ function Tax_calculation(props) {
 
     return (
         <div className="tax-calculation">
+                    <div className={props.taxTerm === "shortTermTaxRate" ? "tax-term short-term-red" : "tax-term long-term-green"}></div>
                     <div className={"tax-1"}>{props.grossCapitalGains}</div>
                     <div className={"tax-2"}>{`${props.taxRate}%`}</div>
                     <div className={"tax-3"}>{props.taxPaid}</div>

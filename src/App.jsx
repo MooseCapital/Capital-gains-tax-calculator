@@ -29,11 +29,10 @@ function App() {
         setTaxDivs(prevDivs => {
             return prevDivs.filter(div => div.id !== id)
         })
-        console.log(localStorage)
-        console.log(taxDivs)
+
     }
 
-    function createNewTaxDiv(gross, taxPaid, taxRate) {
+    function createNewTaxDiv(gross, taxPaid, taxRate, taxTerm) {
         let Net = gross - taxPaid;
 
 
@@ -43,6 +42,7 @@ function App() {
             taxPaid: formatter.format(taxPaid),
             taxRate: taxRate,
             NetGains: formatter.format(Net),
+            taxTerm: taxTerm,
         }
         setTaxDivs(prevTax => [ ...prevTax, newTaxDiv])
         console.log(taxDivs)
@@ -58,11 +58,11 @@ function App() {
         if (term === "shortTermTaxRate") {
             taxPaid = tax.getShortTermTaxInfo(gains, stateTax).taxPaid
             taxRate = tax.getShortTermTaxInfo(gains, stateTax).taxRate
-            createNewTaxDiv(gains, taxPaid, taxRate)
+            createNewTaxDiv(gains, taxPaid, taxRate, term)
         } else {
             taxPaid = tax.getLongTermTaxInfo(gains, stateTax).taxPaid
             taxRate = tax.getLongTermTaxInfo(gains, stateTax).taxRate
-            createNewTaxDiv(gains, taxPaid, taxRate)
+            createNewTaxDiv(gains, taxPaid, taxRate, term)
         }
     }
 

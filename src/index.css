@@ -64,7 +64,7 @@ padding-top: 50px;
     white-space: nowrap;
     margin-top: 20px;
  }
- #tax-radio {
+ .tax-radio {
  font-size: 14px;
  display: flex;
  margin-top: 10px;
@@ -157,13 +157,30 @@ box-shadow:
 width: 100%;
 height: 80px;
 border-radius: 7px;
-grid-template: auto / 1fr 1fr 1fr 1fr auto ;
+grid-template: auto / 10px 1fr 1fr 1fr 1fr auto ;
 margin-bottom: 30px;
 }
 .tax-calculation>div {
 /*margin: 0 140px;*/
-padding-left: 200px;
+/*padding-left: 200px;*/
 font-weight: 500;
+}
+.tax-term {
+/*width: 5px;*/
+height: 100%;
+width: 10px;
+border-radius: 7px 0 0 7px;
+margin-right: -200px;
+}
+.short-term-red {
+background-color: #BF616A;
+
+
+}
+.long-term-green {
+background-color: #A3BE8C;
+}
+.tax-2,.tax-1,.tax-3,.tax-4 {
 }
 .close {
     cursor: pointer;
@@ -171,17 +188,20 @@ font-weight: 500;
     /*position: fixed;*/
     /*right: 4%;*/
 }
+.tax-1 {
+margin-left: 200px;
+}
 .tax-2 {
-margin-left: 20px;
-
+/*margin-left: 20px;*/
+margin-left: 220px;
 }
 .tax-4 {
-margin-left: -70px;
-color: #A3BE8C;
+/*color: #A3BE8C;*/
+margin-left: 125px;
 }
 .tax-3 {
-margin-left: -40px;
-color: #BF616A;
+/*color: #BF616A;*/
+margin-left: 160px;
 }
 
 
@@ -220,10 +240,17 @@ input[type="radio"]::before {
     height: 0.6em;
     border-radius: 50%;
     transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
+    transition: 60ms transform ease-in-out;
+    box-shadow: inset 1em 1em #81A1C1;
 }
 
 input[type="radio"]:checked::before {
     transform: scale(1);
 }
+#shortTermTaxRate::before {
+box-shadow: inset 1em 1em #BF616A;
+}
+#longTermTaxRate::before {
+box-shadow: inset 1em 1em #A3BE8C;
+}
+
