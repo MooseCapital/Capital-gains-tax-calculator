@@ -1,5 +1,5 @@
 # Capital-gains-tax-calculator
-
+![React](public/react.svg) ![Vite](public/vitejs.svg)
 
 This is my first project fully on my own since learning React.
 
@@ -7,21 +7,11 @@ I am taking Bob Ziroll's React Beginner course.This is my first course on React.
 
 I thought I would create something I'm familiar with like my previous [Charitable-Remainder-Trust-Calculator](https://github.com/MooseCapital/-Charitable-Remainder-Trust-Calculator-) that is built in plain javascript only.
 
-
-
 ## Features
-
+- calculate tax on every input
+- input custom state tax rate
+- pick short or long capital gains
 - Localstorage will store tax calculations
-
-
-## Tech Stack
-
-**Client:** ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB), ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-
-**Style**  [NordTheme](https://www.nordtheme.com/)
-
-
-
 
 ## Lessons Learned
 
