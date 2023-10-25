@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build:digitalocean": "npm install --production=false && npm run build && npm ci",
+    "build_vite": "vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
