@@ -1,4 +1,5 @@
 import {useState} from "react";
+import React from 'react'
 import tax from "./tax-rates.js";
 const closeImg = new URL('/public/close.svg', import.meta.url).href
 const closePrelightImg = new URL('/public/close_prelight.svg', import.meta.url).href

@@ -1,5 +1,6 @@
 import {useState} from "react";
 import tax from "./tax-rates.js";
+import React from 'react'
 import Tax_calculation from "./Tax-Calculation.jsx";
 function Content(props) {
 

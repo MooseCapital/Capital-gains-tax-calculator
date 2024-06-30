@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import React from 'react'
 import tax from "./tax-rates.js";
 function Sidebar(props) {
 
